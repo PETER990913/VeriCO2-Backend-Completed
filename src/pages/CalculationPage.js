@@ -36,6 +36,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
     const fileRef = useRef()
     const [dataset, setDataset] = useState([])
     const [dataset1, setDataset1] = useState({})
+    const [dataset2, setDataset2] = useState({})
     const onClick = () => {
         fileRef.current.click()
     }
@@ -53,11 +54,17 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                 .then(res => setDataset(res.data.data));
         }
     }
-    const handleFileParseCSV = () => {        
+    const handleFileParseCSV = () => {
         axios.get('http://localhost:4000/load-factor')
             .then(res => setDataset1(res.data));
     }
-    console.log("dataset1", dataset1)
+
+    const handleFileParseScope = () => {
+        axios.get('http://localhost:4000/load-scope')
+            .then(res => setDataset2(res.data));
+    }
+    // console.log("dataset1", dataset1)
+    console.log("dataset2", dataset2)
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [result1_1, setResult1_1] = useState(0);
@@ -128,7 +135,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
         if (category === 10 & method === 1) return <UseIndirect onChange={(data) => { setResult10_2(data) }} />
         if (category === 11 & method === 0) return <EndWaste onChange={(data) => { setResult11_1(data) }} />
         if (category === 12 & method === 0) return <Downstream onChange={(data) => { setResult12_1(data) }} />
-        if (category === 13 & method === 0) return <FranchisesSpecific dataset={dataset} onChange={(data) => { setResult13_1(data) }} />
+        if (category === 13 & method === 0) return <FranchisesSpecific dataset2={dataset2} dataset={dataset} onChange={(data) => { setResult13_1(data) }} />
         if (category === 13 & method === 1) return <FranchisesAverage onChange={(data) => { setResult13_2(data) }} />
         if (category === 14 & method === 0) return <InvestmentSpecific onChange={(data) => { setResult14_1(data) }} />
         if (category === 14 & method === 1) return <InvestmentAverage onChange={(data) => { setResult14_2(data) }} />
@@ -1077,6 +1084,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <div className='button' onClick={onClick}>Upload Data</div>
                             <input type="file" style={{ display: 'none' }} ref={fileRef} onChange={handleFileParse} />
                             <div className='button' onClick={handleFileParseCSV}>Import Emission Factor</div>
+                            <div className='button' onClick={handleFileParseScope}>Import Scope1 & 2</div>
                         </div>
                     </div>
                     <div className='box'>

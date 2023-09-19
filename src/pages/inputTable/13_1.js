@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
-function FranchisesSpecific({onChange, dataset}) {
+function FranchisesSpecific({onChange, dataset, dataset2}) {
     const [v0, setV0]= useState(100000);
     const [v1, setV1]= useState(20000);
     const [v2, setV2]= useState(25000);
@@ -11,6 +11,7 @@ function FranchisesSpecific({onChange, dataset}) {
     const [v7, setV7]= useState(30000);
     const [v8, setV8]= useState(30000);
     const [v9, setV9]= useState(10000);
+    const [v10, setV10]= useState('1');
 
     useEffect(() => {
         console.log('dataset', dataset)
@@ -28,10 +29,21 @@ function FranchisesSpecific({onChange, dataset}) {
         }
     }, [dataset])
 
+    const handleOnChange = (e) => {
+        console.log('handle change->', e.target.value);
+        const keyVal = e.target.value
+        setV10(e.target.value)
+        const v0 = dataset2[keyVal] ? dataset2[keyVal][0] : 0
+        const v1 = dataset2[keyVal] ? dataset2[keyVal][1] : 0
+        if(v0) setV0(v0)
+        if(v1) setV1(v1)
+    }
+
+
     useEffect(()=>{
         onChange(Number(v0)+Number(v1)+Number(v2)+Number(v3)+Number(v4)+Number(v5)+Number(v6)+Number(v7)+Number(v8)+Number(v9))
     },[
-        v0,v1,v2,v3,v4,v5,v6,v7,v8,v9
+        v0,v1,v2,v3,v4,v5,v6,v7,v8,v9,v10
     ])
     return (
         // <div className='SignupPage' onClick={() => setfake1(true)}>
@@ -46,7 +58,7 @@ function FranchisesSpecific({onChange, dataset}) {
                             <th>Scope 2 emissions (kg CO2e)</th>
                         </tr>
                         <tr>
-                            <td>1</td>
+                            <td><input type='text' value={v10} className='Input_form' onChange={handleOnChange}/></td>
                             <td><input type='text' value={v0} className='Input_form' onChange={(e)=>{setV0(e.target.value)}}/></td>
                             <td><input type='text' value={v1} className='Input_form' onChange={(e)=>{setV1(e.target.value)}}/></td>
                         </tr>
