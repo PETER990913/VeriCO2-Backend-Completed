@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../../App.scss'
-function PurchasedHybrid({onChange}) {
+function PurchasedHybrid({onChange, dataset1}) {
     const [v0, setV0]= useState(5000);
     const [v1, setV1]= useState(0.5);
     const [v2, setV2]= useState(2500);
@@ -23,6 +23,19 @@ function PurchasedHybrid({onChange}) {
     const [v19, setV19]= useState(0.10);
     const [v20, setV20]= useState(100);
     const [v21, setV21]= useState(0.50);
+
+    useEffect(() => {        
+        setV1(dataset1.Electricity)
+        setV5(dataset1.Natural_gas)
+        setV7(dataset1.Cotton_mass)
+        setV9(dataset1.Polymer_mass)
+        setV11(dataset1.Chemical_A_mass)
+        setV13(dataset1.Chemical_B_mass)
+        setV15(dataset1.Cotton_distance)
+        setV17(dataset1.Polymer_distance)
+        setV19(dataset1.Chemical_A_distance)
+        setV21(dataset1.Chemical_B_distance)
+    }, [dataset1])
 
     useEffect(()=>{
         onChange(Number(v0)*Number(v1)+Number(v2)*Number(v3)+Number(v4)*Number(v5)+Number(v6)*Number(v7)+Number(v8)*Number(v9)+Number(v10)*Number(v11)+Number(v4)*Number(v12)*Number(v13)+Number(v6)*Number(v14)*Number(v15)+Number(v8)*Number(v16)*Number(v17)+Number(v10)*Number(v18)*Number(v19)+Number(v20)*Number(v21))

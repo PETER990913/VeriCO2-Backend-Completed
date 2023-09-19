@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../../App.scss'
-function FuelTransmission({ onChange }) {
+function FuelTransmission({ onChange, dataset1 }) {
     const [v0, setV0] = useState(500000);
     const [v1, setV1] = useState("N/A");
     const [v2, setV2] = useState(600000);
@@ -33,6 +33,14 @@ function FuelTransmission({ onChange }) {
     const [v29, setV29] = useState("N/A");
     const [v30, setV30] = useState(5500000);
     const [v31, setV31] = useState("N/A");
+
+    useEffect(() => {        
+        setV8(dataset1.Australia_Upstream_emission_factor)
+        setV12(dataset1.Canada_Upstream_emission_factor)
+        setV18(dataset1.India_Upstream_emission_factor)
+        setV22(dataset1.United_States_Upstream_emission_factor)
+        setV26(dataset1.Turkey_Upstream_emission_factor)
+    }, [dataset1])
 
     useEffect(() => {
         onChange(Number(v0) * Number(v8) + Number(v2) * Number(v12) + Number(v4) * Number(v18) + Number(v30) * Number(v22) + Number(v6) * Number(v26) + Number(v0) * Number(v9) * Number(v10)/100 + Number(v2) * Number(v13) * Number(v14)/100 + Number(v3) * Number(v16) * Number(v17)/100 + Number(v4) * Number(v19) * Number(v20)/100 + Number(v30) * Number(v23) * Number(v24)/100 + Number(v6) * Number(v27) * Number(v28)/100 + Number(v3) * Number(v15))

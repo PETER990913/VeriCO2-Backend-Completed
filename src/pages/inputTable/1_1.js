@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../../App.scss'
-function PurchasedSupplier({onChange, dataset}) {
+function PurchasedSupplier({onChange, dataset, dataset1}) {
     const [v0, setV0]= useState(200000);
     const [v1, setV1]= useState(0.15);
     const [v2, setV2]= useState(600000);
@@ -27,6 +27,17 @@ function PurchasedSupplier({onChange, dataset}) {
             setV9(dataset[0][4][1])
         }
     }, [dataset])
+    
+
+    useEffect(() => {
+        console.log('dataset1_frontend', dataset1)
+        console.log("first_item", dataset1.cement)
+        console.log("----------------------")
+        setV1(dataset1.cement)
+        setV5(dataset1.Paint)
+        setV7(dataset1.Timber)
+        setV9(dataset1.Concrete)
+    }, [dataset1])
 
     useEffect(()=>{
         onChange(Number(v0)*Number(v1)+Number(v2)*Number(v3)+Number(v4)*Number(v5)+Number(v6)*Number(v7)+Number(v8)*Number(v9))

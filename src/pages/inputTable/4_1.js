@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
-function WasteWaste({onChange}) {
+function WasteWaste({onChange, dataset1}) {
     const [v0, setV0]= useState(2000);
     const [v1, setV1]= useState(40);
     const [v2, setV2]= useState(5000);
@@ -9,6 +9,15 @@ function WasteWaste({onChange}) {
     const [v5, setV5]= useState(10);
     const [v6, setV6]= useState(5000);
     const [v7, setV7]= useState(0.5);
+
+    useEffect(() => {        
+        setV1(dataset1.Landfill_Plastic)
+        setV3(dataset1.Incinerated_with_energy_recovery)
+        setV5(dataset1.Recycled_Plastic)
+        setV7(dataset1.Wastewater)
+    }, [dataset1])
+
+
     useEffect(()=>{
         onChange(Number(v0)*Number(v1)+Number(v2)*Number(v3)+Number(v4)*Number(v5)+Number(v6)*Number(v7))
     },[
@@ -25,7 +34,7 @@ function WasteWaste({onChange}) {
                             <th>Waste type</th>
                             <th>Waste  produced</th>
                             <th>Waste treatment</th>
-                            <th>Waste type and waste treatment specific emission factor*</th>
+                            <th>Waste type and waste treatment specific emission factor</th>
                         </tr>
                         <tr>
                             <td>Plastic</td>

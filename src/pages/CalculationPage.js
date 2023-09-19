@@ -34,7 +34,8 @@ import FuelTransmission from './inputTable/1_15';
 
 function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
     const fileRef = useRef()
-    const [ dataset, setDataset] = useState([])
+    const [dataset, setDataset] = useState([])
+    const [dataset1, setDataset1] = useState({})
     const onClick = () => {
         fileRef.current.click()
     }
@@ -45,13 +46,18 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
             const formData = new FormData()
             formData.append('csv', files[0]);
             axios.post('http://localhost:4000/read-file', formData, {
-            headers: {
-                "Content-Type": "multipart/form-data",
-            }
-        })
-            .then(res => setDataset(res.data.data));
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                }
+            })
+                .then(res => setDataset(res.data.data));
         }
     }
+    const handleFileParseCSV = () => {        
+        axios.get('http://localhost:4000/load-factor')
+            .then(res => setDataset1(res.data));
+    }
+    console.log("dataset1", dataset1)
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [result1_1, setResult1_1] = useState(0);
@@ -103,15 +109,15 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
         }
     }, [SERVER_URL, navigate])
     const displaycase = () => {
-        if (category === 0 & method === 0) return <PurchasedSupplier dataset = {dataset} onChange={(data) => { setResult1_1(data) }} />
-        if (category === 0 & method === 1) return <PurchasedHybrid onChange={(data) => { setResult1_2(data) }} />
-        if (category === 0 & method === 2) return <PurchasedAverage onChange={(data) => { setResult1_3(data) }} />
-        if (category === 0 & method === 3) return <PurchasedSpend onChange={(data) => { setResult1_4(data) }} />
-        if (category === 3 & method === 0) return <UpstreamFuel onChange={(data) => { setResult3_1(data) }} />
-        if (category === 3 & method === 1) return <UpstreamDistance onChange={(data) => { setResult3_2(data) }} />
-        if (category === 3 & method === 2) return <UpstreamSpend onChange={(data) => { setResult3_3(data) }} />
-        if (category === 4 & method === 0) return <WasteWaste onChange={(data) => { setResult4_1(data) }} />
-        if (category === 4 & method === 1) return <WasteAverage onChange={(data) => { setResult4_2(data) }} />
+        if (category === 0 & method === 0) return <PurchasedSupplier dataset={dataset} dataset1={dataset1} onChange={(data) => { setResult1_1(data) }} />
+        if (category === 0 & method === 1) return <PurchasedHybrid dataset1={dataset1} onChange={(data) => { setResult1_2(data) }} />
+        if (category === 0 & method === 2) return <PurchasedAverage dataset1={dataset1} onChange={(data) => { setResult1_3(data) }} />
+        if (category === 0 & method === 3) return <PurchasedSpend dataset1={dataset1} onChange={(data) => { setResult1_4(data) }} />
+        if (category === 3 & method === 0) return <UpstreamFuel dataset1={dataset1} onChange={(data) => { setResult3_1(data) }} />
+        if (category === 3 & method === 1) return <UpstreamDistance dataset1={dataset1} onChange={(data) => { setResult3_2(data) }} />
+        if (category === 3 & method === 2) return <UpstreamSpend dataset1={dataset1} onChange={(data) => { setResult3_3(data) }} />
+        if (category === 4 & method === 0) return <WasteWaste dataset1={dataset1} onChange={(data) => { setResult4_1(data) }} />
+        if (category === 4 & method === 1) return <WasteAverage dataset1={dataset1} onChange={(data) => { setResult4_2(data) }} />
         if (category === 5 & method === 0) return <BusinessFuel onChange={(data) => { setResult5_1(data) }} />
         if (category === 6 & method === 0) return <EmployeeDistance onChange={(data) => { setResult6_1(data) }} />
         if (category === 6 & method === 1) return <EmployeeAverage onChange={(data) => { setResult6_2(data) }} />
@@ -122,12 +128,12 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
         if (category === 10 & method === 1) return <UseIndirect onChange={(data) => { setResult10_2(data) }} />
         if (category === 11 & method === 0) return <EndWaste onChange={(data) => { setResult11_1(data) }} />
         if (category === 12 & method === 0) return <Downstream onChange={(data) => { setResult12_1(data) }} />
-        if (category === 13 & method === 0) return <FranchisesSpecific dataset = {dataset} onChange={(data) => { setResult13_1(data) }} />
+        if (category === 13 & method === 0) return <FranchisesSpecific dataset={dataset} onChange={(data) => { setResult13_1(data) }} />
         if (category === 13 & method === 1) return <FranchisesAverage onChange={(data) => { setResult13_2(data) }} />
         if (category === 14 & method === 0) return <InvestmentSpecific onChange={(data) => { setResult14_1(data) }} />
         if (category === 14 & method === 1) return <InvestmentAverage onChange={(data) => { setResult14_2(data) }} />
-        if (category === 2 & method === 0) return <FuelTransmission onChange={(data) => { setResult1_15(data) }} />
-        else return <PurchasedSupplier  dataset = {dataset} onChange={(data) => { setResult1_1(data) }} />
+        if (category === 2 & method === 0) return <FuelTransmission dataset1={dataset1} onChange={(data) => { setResult1_15(data) }} />
+        else return <PurchasedSupplier dataset={dataset} dataset1={dataset1} onChange={(data) => { setResult1_1(data) }} />
     }
 
     const displayresult = () => {
@@ -137,7 +143,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <div className='top'>
                         <span>Scope 3 Emission:</span>
                         <div>
-                            <span>{result1_1 / 1000}K</span>
+                            <span>{(result1_1 / 1000).toFixed(1)}K</span>
                             <span>KgCO2e</span>
                         </div>
                     </div>
@@ -173,7 +179,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <div className='top'>
                         <span>Scope 3 Emission:</span>
                         <div>
-                            <span>{result1_2 / 1000}K</span>
+                            <span>{(result1_2 / 1000).toFixed(1)}K</span>
                             <span>KgCO2e</span>
                         </div>
                     </div>
@@ -1069,8 +1075,8 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             {displaycase()}
 
                             <div className='button' onClick={onClick}>Upload Data</div>
-                            <input type="file" style={{ display: 'none' }} ref={fileRef} onChange={handleFileParse}/>
-                            <div className='button'>Import Emission Factor</div>
+                            <input type="file" style={{ display: 'none' }} ref={fileRef} onChange={handleFileParse} />
+                            <div className='button' onClick={handleFileParseCSV}>Import Emission Factor</div>
                         </div>
                     </div>
                     <div className='box'>

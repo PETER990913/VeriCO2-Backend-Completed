@@ -1,0 +1,40 @@
+,Factor Name,Value
+0,cement,0.52284 
+1,Paint,4 
+2,Timber,0.45 
+3,Concrete,0.042 
+4,Electricity,9 
+5,Natural gas,0.000033 
+6,Cotton,11.9 
+7,Polymer,0.835 
+8,Chemical A,2.9 
+9,Chemical B,2.5 
+10,Cotton,0.91 
+11,Polymer,0.156 
+12,Chemical A,0.3 
+13,Chemical B,0.6
+14,Waste sent to landfill,0.67
+15,Hard drive,27.21 
+16,Integrated circuits,1.6 
+17,Liquid Crystal Display (LCD),22
+18,Plastic (PS),0.1
+19,Plastic (ABS),0.06
+20,PET (film),0.444
+21,Aluminum,0.608
+22,Steel,0.1 
+23,Epoxy resin,47
+24,Copper,0.04
+25,Glass,0.20 
+26,Australia Upstream emission factor,0.7
+27,Canada Upstream emission factor,0.7
+28,India Upstream emission factor,0.02 
+29,United States Upstream emission factor,0.000033 
+30,Turkey Upstream emission factor,0.02 
+31,Landfill Plastic,25
+32,Incinerated with energy recovery,25
+33,Recycled Plastic,44 
+34,Wastewater,0.037 
+35,Landfill Average emission factor,884.27 
+36,Incinerated with energy recovery Average emission factor,0.83 
+37,Recycled Average emission factor,0.68
+38,Composted Average emission factor,9.54 

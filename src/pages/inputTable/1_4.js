@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
-function  PurchasedSpend({onChange}) {
+function  PurchasedSpend({onChange, dataset1}) {
     const [v0, setV0]= useState(400);
     const [v1, setV1]= useState(20);
     const [v2, setV2]= useState(200);
@@ -31,6 +31,20 @@ function  PurchasedSpend({onChange}) {
     const [v27, setV27]= useState(0.3);
     const [v28, setV28]= useState(5000);
     const [v29, setV29]= useState(0.4);
+
+    useEffect(() => {        
+        setV1(dataset1.Hard_drive)
+        setV5(dataset1.Integrated_circuits)
+        setV7(dataset1.Liquid_Crystal_Display)
+        setV15(dataset1.Plastic_PS)
+        setV17(dataset1.Plastic_ABS)
+        setV19(dataset1.PET_film)
+        setV21(dataset1.Aluminum)
+        setV23(dataset1.Steel)
+        setV25(dataset1.Epoxy_resin)
+        setV27(dataset1.Copper)
+        setV29(dataset1.Glass)
+    }, [dataset1])
 
     useEffect(()=>{
         onChange(Number(v0)*Number(v1)+Number(v2)*Number(v3)+Number(v4)*Number(v5)+Number(v6)*Number(v7)+Number(v8)*Number(v9)+Number(v10)*Number(v11)+Number(v12)*Number(v13)+Number(v14)*Number(v15)+Number(v16)*Number(v17)+Number(v18)*Number(v19)+Number(v20)*Number(v21)+Number(v22)*Number(v23)+Number(v24)*Number(v25)+Number(v26)*Number(v27)+Number(v28)*Number(v29))

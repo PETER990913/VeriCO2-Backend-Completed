@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
-function WasteAverage({onChange}) {
+function WasteAverage({onChange, dataset1}) {
     const [v0, setV0]= useState(40);
     const [v1, setV1]= useState(25);
     const [v2, setV2]= useState(300);
@@ -12,6 +12,13 @@ function WasteAverage({onChange}) {
     const [v8, setV8]= useState(10);
     const [v9, setV9]= useState(20);
     const [v10, setV10]= useState(30);
+
+    useEffect(() => {        
+        setV2(dataset1.Landfill_Average_emission_factor)
+        setV4(dataset1.Incinerated_with_energy_recovery_Average_emission_factor)
+        setV6(dataset1.Recycled_Average_emission_factor)
+        setV8(dataset1.Composted_Average_emission_factor)
+    }, [dataset1])
 
     useEffect(()=>{
         onChange((Number(v0)*Number(v1)*Number(v2)+Number(v0)*Number(v3)*Number(v4)+Number(v0)*Number(v5)*Number(v6)+Number(v0)*Number(v7)*Number(v8)+Number(v0)*Number(v9)*Number(v10))/100)

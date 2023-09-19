@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
-function PurchasedAverage({onChange}) {
+function PurchasedAverage({onChange, dataset1}) {
     const [v0, setV0]= useState(400);
     const [v1, setV1]= useState(20);
     const [v2, setV2]= useState(200);
@@ -13,6 +13,12 @@ function PurchasedAverage({onChange}) {
     const [v9, setV9]= useState(3);
     const [v10, setV10]= useState(300);
     const [v11, setV11]= useState(3);
+    useEffect(() => {        
+        setV1(dataset1.Hard_drive)
+        setV3(dataset1.Integrated_circuits)
+        setV5(dataset1.Liquid_Crystal_Display)
+    }, [dataset1])
+
     useEffect(()=>{
         onChange(Number(v0)*Number(v1)+Number(v2)*Number(v3)+Number(v4)*Number(v5)+Number(v6)*Number(v7)+Number(v8)*Number(v9)+Number(v10)*Number(v11))
     },[
