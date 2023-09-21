@@ -137,7 +137,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
         if (category === 12 & method === 0) return <Downstream onChange={(data) => { setResult12_1(data) }} />
         if (category === 13 & method === 0) return <FranchisesSpecific dataset2={dataset2} dataset={dataset} onChange={(data) => { setResult13_1(data) }} />
         if (category === 13 & method === 1) return <FranchisesAverage onChange={(data) => { setResult13_2(data) }} />
-        if (category === 14 & method === 0) return <InvestmentSpecific onChange={(data) => { setResult14_1(data) }} />
+        if (category === 14 & method === 0) return <InvestmentSpecific dataset2={dataset2} onChange={(data) => { setResult14_1(data) }} />
         if (category === 14 & method === 1) return <InvestmentAverage onChange={(data) => { setResult14_2(data) }} />
         if (category === 2 & method === 0) return <FuelTransmission dataset1={dataset1} onChange={(data) => { setResult1_15(data) }} />
         else return <PurchasedSupplier dataset={dataset} dataset1={dataset1} onChange={(data) => { setResult1_1(data) }} />
