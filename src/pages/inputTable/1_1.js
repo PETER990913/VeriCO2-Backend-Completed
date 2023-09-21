@@ -33,14 +33,18 @@ function PurchasedSupplier({ onChange, dataset, dataset1 }) {
         console.log('dataset1_frontend', dataset1)
         console.log("first_item", dataset1.cement)
         console.log("----------------------")
-        setV1(dataset1.cement)
-        setV5(dataset1.Paint)
-        setV7(dataset1.Timber)
-        setV9(dataset1.Concrete)
+        console.log("length", dataset1.length)
+        if (dataset1.cement) {
+            setV1(dataset1.cement)
+            setV5(dataset1.Paint)
+            setV7(dataset1.Timber)
+            setV9(dataset1.Concrete)
+        }
     }, [dataset1])
 
     useEffect(() => {
         onChange(Number(v0) * Number(v1) + Number(v2) * Number(v3) + Number(v4) * Number(v5) + Number(v6) * Number(v7) + Number(v8) * Number(v9))
+        console.log(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9)
     }, [
         v0, v1, v2, v3, v4, v5, v6, v7, v8, v9
     ])
