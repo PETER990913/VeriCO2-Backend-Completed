@@ -34,18 +34,20 @@ function FuelTransmission({ onChange, dataset1 }) {
     const [v30, setV30] = useState(5500000);
     const [v31, setV31] = useState("N/A");
 
-    useEffect(() => {        
-        setV8(dataset1.Australia_Upstream_emission_factor)
-        setV12(dataset1.Canada_Upstream_emission_factor)
-        setV18(dataset1.India_Upstream_emission_factor)
-        setV22(dataset1.United_States_Upstream_emission_factor)
-        setV26(dataset1.Turkey_Upstream_emission_factor)
+    useEffect(() => {
+        if (dataset1.Australia_Upstream_emission_factor) {
+            setV8(dataset1.Australia_Upstream_emission_factor)
+            setV12(dataset1.Canada_Upstream_emission_factor)
+            setV18(dataset1.India_Upstream_emission_factor)
+            setV22(dataset1.United_States_Upstream_emission_factor)
+            setV26(dataset1.Turkey_Upstream_emission_factor)
+        }
     }, [dataset1])
 
     useEffect(() => {
-        onChange(Number(v0) * Number(v8) + Number(v2) * Number(v12) + Number(v4) * Number(v18) + Number(v30) * Number(v22) + Number(v6) * Number(v26) + Number(v0) * Number(v9) * Number(v10)/100 + Number(v2) * Number(v13) * Number(v14)/100 + Number(v3) * Number(v16) * Number(v17)/100 + Number(v4) * Number(v19) * Number(v20)/100 + Number(v30) * Number(v23) * Number(v24)/100 + Number(v6) * Number(v27) * Number(v28)/100 + Number(v3) * Number(v15))
+        onChange(Number(v0) * Number(v8) + Number(v2) * Number(v12) + Number(v4) * Number(v18) + Number(v30) * Number(v22) + Number(v6) * Number(v26) + Number(v0) * Number(v9) * Number(v10) / 100 + Number(v2) * Number(v13) * Number(v14) / 100 + Number(v3) * Number(v16) * Number(v17) / 100 + Number(v4) * Number(v19) * Number(v20) / 100 + Number(v30) * Number(v23) * Number(v24) / 100 + Number(v6) * Number(v27) * Number(v28) / 100 + Number(v3) * Number(v15))
     }, [
-        v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30,v31
+        v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31
     ])
     return (
         // <div className='SignupPage' onClick={() => setfake1(true)}>
