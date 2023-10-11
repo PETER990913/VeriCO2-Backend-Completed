@@ -10,7 +10,7 @@ import DisplayPage from './pages/DisplayPage'
 
 function Routing() {
     const [sideBarFlag, setSideBarFlag] = useState(false)
-    const SERVER_URL = 'http://10.10.11.11:4000/api';
+    const SERVER_URL = 'http://192.168.129.11:4000/api';
     return (
         <Router basename={process.env.PUBLIC_URL}>
             <Routes>
