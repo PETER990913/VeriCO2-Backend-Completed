@@ -2,15 +2,15 @@ import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function UseDirect({onChange}) {
     const [v0, setV0]= useState(1000);
-    const [v1, setV1]= useState(11500);
+    const [v1, setV1]= useState(115);
     const [v2, setV2]= useState(1.3);
     const [v3, setV3]= useState(0.5);
     const [v4, setV4]= useState(1100);
-    const [v5, setV5]= useState(1900);
+    const [v5, setV5]= useState(190);
     const [v6, setV6]= useState(1.5);
     const [v7, setV7]= useState(0.5);
     const [v8, setV8]= useState(2000);
-    const [v9, setV9]= useState(20000);
+    const [v9, setV9]= useState(200);
     const [v10, setV10]= useState(0.2);
     const [v11, setV11]= useState(0.5);
     useEffect(()=>{

@@ -14,13 +14,13 @@ function BusinessFuel({onChange}) {
     const [v10, setV10]= useState(100);
     const [v11, setV11]= useState(4);
     const [v12, setV12]= useState(10);
-    const [v13, setV13]= useState(10000);
+    const [v13, setV13]= useState(1000);
     const [v14, setV14]= useState(5);
     const [v15, setV15]= useState(20);
-    const [v16, setV16]= useState(15000);
+    const [v16, setV16]= useState(1500);
     const [v17, setV17]= useState(6);
     const [v18, setV18]= useState(100);
-    const [v19, setV19]= useState(12000);
+    const [v19, setV19]= useState(1200);
     const [v20, setV20]= useState(5);
     useEffect(()=>{
         onChange(Number(v0)/Number(v1)*Number(v2)*Number(v3)+Number(v4)/Number(v5)*Number(v6)*Number(v7)+Number(v8)/Number(v9)*Number(v10)*Number(v11)+Number(v12)*Number(v13)*Number(v14)+Number(v15)*Number(v16)*Number(v17)+Number(v18)*Number(v19)*Number(v20))

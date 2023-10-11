@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function UpstreamFuel({onChange}) {
-    const [v0, setV0]= useState(50000);
+    const [v0, setV0]= useState(5000);
     const [v1, setV1]= useState(3);
-    const [v2, setV2]= useState(80000);
+    const [v2, setV2]= useState(8000);
     const [v3, setV3]= useState(3);
-    const [v4, setV4]= useState(90000);
+    const [v4, setV4]= useState(9000);
     const [v5, setV5]= useState(3);
     const [v6, setV6]= useState(50);
     const [v7, setV7]= useState(2000);

@@ -2,15 +2,15 @@ import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function FranchisesAverage({onChange}) {
     const [v0, setV0]= useState(100);
-    const [v1, setV1]= useState(30000);
+    const [v1, setV1]= useState(300);
     const [v2, setV2]= useState(150);
-    const [v3, setV3]= useState(30000);
+    const [v3, setV3]= useState(300);
     const [v4, setV4]= useState(400);
-    const [v5, setV5]= useState(10000);
+    const [v5, setV5]= useState(100);
     const [v6, setV6]= useState(700);
-    const [v7, setV7]= useState(10000);
+    const [v7, setV7]= useState(100);
     const [v8, setV8]= useState(500);
-    const [v9, setV9]= useState(10000);
+    const [v9, setV9]= useState(100);
 
     useEffect(()=>{
         onChange(Number(v0)*Number(v1)+Number(v2)*Number(v3)+Number(v4)*Number(v5)+Number(v6)*Number(v7)+Number(v8)*Number(v9))

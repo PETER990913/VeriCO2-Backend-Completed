@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function DownstreamTransportation({onChange}) {
-    const [v0, setV0]= useState(9000);
-    const [v1, setV1]= useState(5000);
-    const [v2, setV2]= useState(10000);
+    const [v0, setV0]= useState(4);
+    const [v1, setV1]= useState(1000);
+    const [v2, setV2]= useState(0.2);
     useEffect(()=>{
-        onChange(Number(v0)*Number(v1)/(Number(v1)+Number(v2)))
+        onChange(Number(v0)*Number(v1)*Number(v2)*1000)
     },[
         v0,v1,v2
     ])
@@ -17,19 +17,20 @@ function DownstreamTransportation({onChange}) {
                 <table>
                     <tbody>
                         <tr>
-                            <th>Factory</th>
-                            <th>Combined scope 1 and scope 2 emissions  (kg CO2e)</th>
-                            <th>Floor space (m2)</th>
+                            <th>Purchaser</th>
+                            <th>Mass of goods sold (tonnes)</th>
+                            <th>Total downstream distance transported (km)</th>
+                            <th>Transport mode or vehicle type</th>
+                            <th>Emission factor (kg CO2e/tonne-km)</th>
                         </tr>
                         <tr>
-                            <td>Factory 1</td>
-                            <td rowSpan={2}><input type='text' value={v0} className='Input_form' onChange={(e)=>{setV0(e.target.value)}}/></td>
+                            <td>B</td>
+                            <td><input type='text' value={v0} className='Input_form' onChange={(e)=>{setV0(e.target.value)}}/></td>
                             <td><input type='text' value={v1} className='Input_form' onChange={(e)=>{setV1(e.target.value)}}/></td>
-                        </tr>
-                        <tr>
-                            <td>Factory 2</td>
+                            <td>Truck  (rigid, 3.5-7.5t)</td>
                             <td><input type='text' value={v2} className='Input_form' onChange={(e)=>{setV2(e.target.value)}}/></td>
                         </tr>
+                        
                     </tbody>
                 </table>
             </div>

@@ -1,19 +1,19 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function InvestmentAverage({onChange}) {
-    const [v0, setV0]= useState(3000000);
+    const [v0, setV0]= useState(300000);
     const [v1, setV1]= useState(5);
     const [v2, setV2]= useState(100);
     const [v3, setV3]= useState(0.6);
-    const [v4, setV4]= useState(7500000);
+    const [v4, setV4]= useState(750000);
     const [v5, setV5]= useState(15);
     const [v6, setV6]= useState(100);
     const [v7, setV7]= useState(0.5);
-    const [v8, setV8]= useState(1150000);
+    const [v8, setV8]= useState(115000);
     const [v9, setV9]= useState(20);
     const [v10, setV10]= useState(100);
     const [v11, setV11]= useState(3.0);
-    const [v12, setV12]= useState(5500000);
+    const [v12, setV12]= useState(550000);
     const [v13, setV13]= useState(10);
     const [v14, setV14]= useState(60);
     const [v15, setV15]= useState(2.0);

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function ProcessingAverage({onChange}) {
-    const [v0, setV0]= useState(1000);
+    const [v0, setV0]= useState(100000);
     const [v1, setV1]= useState(1.5);
     useEffect(()=>{
         onChange(Number(v0)*Number(v1))

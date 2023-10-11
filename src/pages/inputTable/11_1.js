@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function EndWaste({onChange}) {
-    const [v0, setV0]= useState(10000);
+    const [v0, setV0]= useState(1000000);
     const [v1, setV1]= useState(90);
     const [v2, setV2]= useState(0.3);
     const [v3, setV3]= useState(10);

@@ -157,6 +157,37 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
         if (category === 2 & method === 0) return <FuelTransmission dataset1={dataset1} onChange={(data) => { setResult1_15(data) }} />
         else return <PurchasedSupplier dataset={dataset} dataset1={dataset1} onChange={(data) => { setResult1_1(data) }} />
     }
+    useEffect(() => {
+        localStorage.setItem('result1_1', result1_1)
+        localStorage.setItem('result1_2', result1_2)
+        localStorage.setItem('result1_3', result1_3)
+        localStorage.setItem('result1_4', result1_4)
+        localStorage.setItem('result2_1', result2_1)
+        localStorage.setItem('result2_2', result2_2)
+        localStorage.setItem('result2_3', result2_3)
+        localStorage.setItem('result2_4', result2_4)
+        localStorage.setItem('result1_15', result1_15)
+        localStorage.setItem('result3_1', result3_1)
+        localStorage.setItem('result3_2', result3_2)
+        localStorage.setItem('result3_3', result3_3)
+        localStorage.setItem('result4_1', result4_1)
+        localStorage.setItem('result4_2', result4_2)
+        localStorage.setItem('result5_1', result5_1)
+        localStorage.setItem('result6_1', result6_1)
+        localStorage.setItem('result6_2', result6_2)
+        localStorage.setItem('result7_1', result7_1)
+        localStorage.setItem('result8_1', result8_1)
+        localStorage.setItem('result9_1', result9_1)
+        localStorage.setItem('result9_2', result9_2)
+        localStorage.setItem('result10_1', result10_1)
+        localStorage.setItem('result10_2', result10_2)
+        localStorage.setItem('result11_1', result11_1)
+        localStorage.setItem('result12_1', result12_1)
+        localStorage.setItem('result13_1', result13_1)
+        localStorage.setItem('result13_2', result13_2)
+        localStorage.setItem('result14_1', result14_1)
+        localStorage.setItem('result14_2', result14_2)
+    }, [result1_1,result1_2,result1_3,result1_4,result2_1,result2_2,result2_3,result2_4,result3_1,result3_2,result3_3,result4_1,result4_2,result5_1,result1_15,result6_1,result6_2,result7_1,result8_1,result9_1,result9_2,result10_1,result10_2,result11_1,result12_1,result13_1,result13_2.result14_1,result14_2])
 
     const displayresult = () => {
         if (category === 0 & method === 0 & startCalculation === true) return <div>

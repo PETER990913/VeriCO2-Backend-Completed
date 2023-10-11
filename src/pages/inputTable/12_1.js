@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function Downstream({onChange}) {
-    const [v0, setV0]= useState(9000);
+    const [v0, setV0]= useState(900000);
     const [v1, setV1]= useState(5000);
     const [v2, setV2]= useState(10000);
     useEffect(()=>{

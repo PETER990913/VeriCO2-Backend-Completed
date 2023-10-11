@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function EmployeeAverage({onChange}) {
-    const [v0, setV0]= useState(50);
+    const [v0, setV0]= useState(5);
     const [v1, setV1]= useState(10);
     const [v2, setV2]= useState(0.1);
-    const [v3, setV3]= useState(30);
+    const [v3, setV3]= useState(3);
     const [v4, setV4]= useState(15);
     const [v5, setV5]= useState(0.2);
     const [v6, setV6]= useState(15);

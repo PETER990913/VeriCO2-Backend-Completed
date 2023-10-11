@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function ProcessingSite({onChange}) {
-    const [v0, setV0]= useState(3500);
+    const [v0, setV0]= useState(350000);
     const [v1, setV1]= useState(0.2);
-    const [v2, setV2]= useState(2000);
+    const [v2, setV2]= useState(200000);
     const [v3, setV3]= useState(0.5);
-    const [v4, setV4]= useState(50);
+    const [v4, setV4]= useState(5000);
     const [v5, setV5]= useState(0.5);
     useEffect(()=>{
         onChange(Number(v0)*Number(v1)+Number(v2)*Number(v3)+Number(v4)*Number(v5))

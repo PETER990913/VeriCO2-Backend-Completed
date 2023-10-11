@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function UpstreamSpend({onChange}) {
-    const [v0, setV0]= useState(20000);
+    const [v0, setV0]= useState(200000);
     const [v1, setV1]= useState(0.04);
-    const [v2, setV2]= useState(30000);
+    const [v2, setV2]= useState(300000);
     const [v3, setV3]= useState(0.15);
-    const [v4, setV4]= useState(40000);
+    const [v4, setV4]= useState(400000);
     const [v5, setV5]= useState(0.05);
     useEffect(()=>{
         onChange(Number(v0)*Number(v1)+Number(v2)*Number(v3)+Number(v4)*Number(v5))

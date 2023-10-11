@@ -2,23 +2,23 @@ import React, {useState, useEffect} from 'react'
 import '../../App.scss'
 function EmployeeDistance({onChange}) {
     const [v0, setV0]= useState(5);
-    const [v1, setV1]= useState(10);
+    const [v1, setV1]= useState(100);
     const [v2, setV2]= useState(0.1);
     const [v3, setV3]= useState(0);
     const [v4, setV4]= useState(0.2);
     const [v5, setV5]= useState('N/A');
     const [v6, setV6]= useState(4);
-    const [v7, setV7]= useState(10);
+    const [v7, setV7]= useState(100);
     const [v8, setV8]= useState(0.1);
     const [v9, setV9]= useState(1);
     const [v10, setV10]= useState(0.2);
-    const [v11, setV11]= useState(15);
+    const [v11, setV11]= useState(150);
     const [v12, setV12]= useState(0);
     const [v13, setV13]= useState('N/A');
     const [v14, setV14]= useState(0.1);
     const [v15, setV15]= useState(5);
     const [v16, setV16]= useState(0.2);
-    const [v17, setV17]= useState(20);
+    const [v17, setV17]= useState(200);
     useEffect(()=>{
         onChange((Number(v0)*2*Number(v1)*48+Number(v6)*2*Number(v7)*48)*Number(v2)+(Number(v9)*2*Number(v11)*48+Number(v15)*2*Number(v17)*48)*Number(v16))
     },[

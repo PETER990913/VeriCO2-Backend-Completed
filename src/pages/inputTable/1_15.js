@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import '../../App.scss'
 function FuelTransmission({ onChange, dataset1 }) {
-    const [v0, setV0] = useState(500000);
+    const [v0, setV0] = useState(50000);
     const [v1, setV1] = useState("N/A");
-    const [v2, setV2] = useState(600000);
+    const [v2, setV2] = useState(60000);
     const [v3, setV3] = useState(50000);
-    const [v4, setV4] = useState(400000);
+    const [v4, setV4] = useState(40000);
     const [v5, setV5] = useState("N/A");
     const [v6, setV6] = useState(200000);
     const [v7, setV7] = useState("N/A");
@@ -31,7 +31,7 @@ function FuelTransmission({ onChange, dataset1 }) {
     const [v27, setV27] = useState(0.4);
     const [v28, setV28] = useState(12);
     const [v29, setV29] = useState("N/A");
-    const [v30, setV30] = useState(5500000);
+    const [v30, setV30] = useState(550000);
     const [v31, setV31] = useState("N/A");
 
     useEffect(() => {
