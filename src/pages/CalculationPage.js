@@ -35,6 +35,7 @@ import CapitalGoodSupplier from './inputTable/2_1';
 import CapitalGoodHybrid from './inputTable/2_2';
 import CapitalGoodProduct from './inputTable/2_3';
 import CapitalGoodSpend from './inputTable/2_4';
+import DownstreamTransportation from './inputTable/8_1';
 
 function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
     const fileRef = useRef()
@@ -89,6 +90,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
     const [result6_1, setResult6_1] = useState(0);
     const [result6_2, setResult6_2] = useState(0);
     const [result7_1, setResult7_1] = useState(0);
+    const [result8_1, setResult8_1] = useState(0);
     const [result9_1, setResult9_1] = useState(0);
     const [result9_2, setResult9_2] = useState(0);
     const [result10_1, setResult10_1] = useState(0);
@@ -141,6 +143,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
         if (category === 6 & method === 0) return <EmployeeDistance onChange={(data) => { setResult6_1(data) }} />
         if (category === 6 & method === 1) return <EmployeeAverage onChange={(data) => { setResult6_2(data) }} />
         if (category === 7 & method === 0) return <UpstreamAsset onChange={(data) => { setResult7_1(data) }} />
+        if (category === 8 & method === 0) return <DownstreamTransportation onChange={(data) => { setResult8_1(data) }} />
         if (category === 9 & method === 0) return <ProcessingSite onChange={(data) => { setResult9_1(data) }} />
         if (category === 9 & method === 1) return <ProcessingAverage onChange={(data) => { setResult9_2(data) }} />
         if (category === 10 & method === 0) return <UseDirect onChange={(data) => { setResult10_1(data) }} />
@@ -178,7 +181,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result1_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result1_1 / 1000}K</span>
@@ -190,7 +193,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 0 & method === 1 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -202,7 +205,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result1_2 / 1000 * 0.54).toFixed(1)}K</span>
@@ -211,10 +214,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result1_2 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result1_2 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result1_2 / 1000}K</span>
@@ -226,7 +229,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 0 & method === 2 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -238,7 +241,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result1_3 / 1000 * 0.54).toFixed(1)}K</span>
@@ -247,22 +250,22 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result1_3 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result1_3 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result1_3 / 1000}K</span>
                 <span>-3.2%</span>
-            </div>
-            <span className='title'>Emission Source:</span>
+            </div> */}
+            {/* <span className='title'>Emission Source:</span>
             <div className='source-container'>
                 <div className='source'>
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 0 & method === 3 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -274,7 +277,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result1_4 / 1000 * 0.54).toFixed(1)}K</span>
@@ -283,10 +286,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result1_4 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result1_4 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result1_4 / 1000}K</span>
@@ -298,7 +301,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 1 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -310,7 +313,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result2_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -319,10 +322,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result2_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result2_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result2_1 / 1000}K</span>
@@ -334,7 +337,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 1 & method === 1 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -346,7 +349,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result2_2 / 1000 * 0.54).toFixed(1)}K</span>
@@ -355,10 +358,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result2_2 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result2_2 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result2_2 / 1000}K</span>
@@ -370,7 +373,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 1 & method === 2 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -382,7 +385,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result2_3 / 1000 * 0.54).toFixed(1)}K</span>
@@ -391,10 +394,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result2_3 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result2_3 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result2_3 / 1000}K</span>
@@ -406,7 +409,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 1 & method === 3 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -418,7 +421,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result2_4 / 1000 * 0.54).toFixed(1)}K</span>
@@ -427,10 +430,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result2_4 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result2_4 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result2_4 / 1000}K</span>
@@ -442,7 +445,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 2 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -454,7 +457,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result1_15 / 1000 * 0.54).toFixed(1)}K</span>
@@ -463,10 +466,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result1_15 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result1_15 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result1_15 / 1000}K</span>
@@ -478,7 +481,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 3 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -490,7 +493,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result3_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -499,10 +502,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result3_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result3_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result3_1 / 1000}K</span>
@@ -514,7 +517,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 3 & method === 1 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -526,7 +529,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result3_2 / 1000 * 0.54).toFixed(1)}K</span>
@@ -535,10 +538,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result3_2 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result3_2 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result3_2 / 1000}K</span>
@@ -550,7 +553,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 3 & method === 2 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -562,7 +565,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result3_3 / 1000 * 0.54).toFixed(1)}K</span>
@@ -571,10 +574,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result3_3 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result3_3 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result3_3 / 1000}K</span>
@@ -586,7 +589,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 4 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -598,7 +601,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result4_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -607,10 +610,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result4_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result4_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result4_1 / 1000}K</span>
@@ -622,7 +625,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 4 & method === 1 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -634,7 +637,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result4_2 / 1000 * 0.54).toFixed(1)}K</span>
@@ -643,10 +646,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result4_2 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result4_2 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{result4_2 / 1000}K</span>
@@ -658,7 +661,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 5 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -670,7 +673,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result5_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -679,10 +682,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result5_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result5_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result5_1 / 1000).toFixed(1)}K</span>
@@ -694,7 +697,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 6 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -706,7 +709,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result6_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -715,10 +718,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result6_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result6_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result6_1 / 1000).toFixed(1)}K</span>
@@ -730,7 +733,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 6 & method === 1 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -742,7 +745,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result6_2 / 1000 * 0.54).toFixed(1)}K</span>
@@ -751,10 +754,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result6_2 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result6_2 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result6_2 / 1000).toFixed(1)}K</span>
@@ -766,7 +769,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 7 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -778,7 +781,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result7_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -787,10 +790,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result7_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result7_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result7_1 / 1000).toFixed(1)}K</span>
@@ -802,7 +805,43 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
+            </div> */}
+        </div>
+        if (category === 8 & method === 0 & startCalculation === true) return <div>
+            <div className='scopes-container'>
+                <div className='scopes'>
+                    <div className='top'>
+                        <span>Scope 3 Emission:</span>
+                        <div>
+                            <span>{(result8_1 / 1000).toFixed(1)}K</span>
+                            <span>KgCO2e</span>
+                        </div>
+                    </div>
+                    {/* <div className='bottom'>
+                    <div className='item'>
+                        <span>Scope 1:</span>
+                        <span>{(result8_1 / 1000 * 0.54).toFixed(1)}K</span>
+                    </div>
+                    <div className='item'>
+                        <span>Scope 2:</span>
+                        <span>{(result8_1 / 1000 * 0.46).toFixed(1)}K</span>
+                    </div>
+                </div> */}
+                </div>
             </div>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
+        <div className='performance'>
+            <span>{(result8_1 / 1000 * 0.968).toFixed(1)}K</span>
+            <span>{(result8_1 / 1000).toFixed(1)}K</span>
+            <span>-3.2%</span>
+        </div>
+        <span className='title'>Emission Source:</span>
+        <div className='source-container'>
+            <div className='source'>
+                <span className='left'>54%</span>
+                <span className='right'>46%</span>
+            </div>
+        </div> */}
         </div>
         if (category === 9 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -814,7 +853,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result9_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -823,10 +862,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result9_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result9_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result9_1 / 1000).toFixed(1)}K</span>
@@ -838,7 +877,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 9 & method === 1 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -850,7 +889,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result9_2 / 1000 * 0.54).toFixed(1)}K</span>
@@ -859,10 +898,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result9_2 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result9_2 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result9_2 / 1000).toFixed(1)}K</span>
@@ -874,7 +913,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 10 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -886,7 +925,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result10_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -895,10 +934,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result10_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result10_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result10_1 / 1000).toFixed(1)}K</span>
@@ -910,7 +949,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 10 & method === 1 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -922,7 +961,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result10_2 / 1000 * 0.54).toFixed(1)}K</span>
@@ -931,10 +970,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result10_2 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result10_2 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result10_2 / 1000).toFixed(1)}K</span>
@@ -946,7 +985,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 11 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -958,7 +997,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result11_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -967,10 +1006,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result11_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result11_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result11_1 / 1000).toFixed(1)}K</span>
@@ -982,7 +1021,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 12 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -994,7 +1033,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result12_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -1003,10 +1042,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result12_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result12_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result12_1 / 1000).toFixed(1)}K</span>
@@ -1018,7 +1057,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 13 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -1030,7 +1069,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result13_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -1039,10 +1078,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result13_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result13_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result13_1 / 1000).toFixed(1)}K</span>
@@ -1054,7 +1093,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 13 & method === 1 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -1066,7 +1105,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result13_2 / 1000 * 0.54).toFixed(1)}K</span>
@@ -1075,10 +1114,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result13_2 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result13_2 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result13_2 / 1000).toFixed(1)}K</span>
@@ -1090,7 +1129,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 14 & method === 0 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -1102,7 +1141,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result14_1 / 1000 * 0.54).toFixed(1)}K</span>
@@ -1111,10 +1150,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result14_1 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result14_1 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result14_1 / 1000).toFixed(1)}K</span>
@@ -1126,7 +1165,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         if (category === 14 & method === 1 & startCalculation === true) return <div>
             <div className='scopes-container'>
@@ -1138,7 +1177,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>KgCO2e</span>
                         </div>
                     </div>
-                    <div className='bottom'>
+                    {/* <div className='bottom'>
                         <div className='item'>
                             <span>Scope 1:</span>
                             <span>{(result14_2 / 1000 * 0.54).toFixed(1)}K</span>
@@ -1147,10 +1186,10 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                             <span>Scope 2:</span>
                             <span>{(result14_2 / 1000 * 0.46).toFixed(1)}K</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>{(result14_2 / 1000 * 0.968).toFixed(1)}K</span>
                 <span>{(result14_2 / 1000).toFixed(1)}K</span>
@@ -1162,7 +1201,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>54%</span>
                     <span className='right'>46%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
         else return <div>
             <div className='scopes-container'>
@@ -1186,7 +1225,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     </div> */}
                 </div>
             </div>
-            <span className='title_1'>Scope 3 YOY Performance:</span>
+            {/* <span className='title_1'>Scope 3 YOY Performance:</span>
             <div className='performance'>
                 <span>000</span>
                 <span>000</span>
@@ -1198,7 +1237,7 @@ function CalculationPage({ sideBarFlag, setSideBarFlag, SERVER_URL }) {
                     <span className='left'>0%</span>
                     <span className='right'>0%</span>
                 </div>
-            </div>
+            </div> */}
         </div>
     }
     return (
