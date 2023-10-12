@@ -749,7 +749,8 @@ body {
               flex-direction: column;
               span{
                 &:nth-child(1){
-                  color: rgba(128, 128, 128, 0.658);
+                  // color: rgba(128, 128, 128, 0.658);
+                  color: #000000;
                   font-size: x-small;
                 }
                 &:nth-child(2){

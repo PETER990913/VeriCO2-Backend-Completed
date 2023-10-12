@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import Header from '../components/Header'
-// import exampleChart from '../assets/images/example-chart.png'
 import Footer from '../components/Footer'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
@@ -14,8 +13,6 @@ import {
     Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-// import faker from 'faker';
-import { faker } from '@faker-js/faker';
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -36,10 +33,18 @@ const options = {
         },
     },
 };
-const labels = ['PurchaseGoodSupplier', 'PurchaseGoodHybrid', 'PurchaseGoodAverage', 'PurchaseGoodSpend', 'CapitalGoodSupplier', 'CapitalGoodHybrid', 'CapitalGoodProduct', 'CapitalGoodSpend', 'FuelEnergyLosses', 'UpstreamFuel', 'UpstreamDistance', 'UpstreamSpend', 'WasteType', 'WasteAverageData', 'BusinessTravelDistance', 'EmployeeDistance', 'EmployeeAverage', 'UpstreamLeasedAssets', 'DownstreamTransporatation', 'SoldProductSite', 'SoldProductAverage', 'SoldDirectUse', 'SoldIndirectUse', 'EndOfLifeWaste', 'DownStreamLeasedAssets', 'FranchieseSpecific', 'FranchisesAverage', 'InvestmentSpecific', 'InvestmentAverage']
 
 
 function DisplayPage() {
+    const Category_method1 = sessionStorage.getItem('Category_method1')
+    const Category_method2 = sessionStorage.getItem('Category_method2')
+    const Category_method4 = sessionStorage.getItem('Category_method4')
+    const Category_method5 = sessionStorage.getItem('Category_method5')
+    const Category_method7 = sessionStorage.getItem('Category_method7')
+    const Category_method10 = sessionStorage.getItem('Category_method10')
+    const Category_method11 = sessionStorage.getItem('Category_method11')
+    const Category_method14 = sessionStorage.getItem('Category_method14')
+    const Category_method15 = sessionStorage.getItem('Category_method15')
     const Chart1_1 = localStorage.getItem('result1_1')/1000
     const Chart1_2 = localStorage.getItem('result1_2')/1000
     const Chart1_3 = localStorage.getItem('result1_3')/1000
@@ -69,14 +74,98 @@ function DisplayPage() {
     const Chart13_2 = localStorage.getItem('result13_2')/1000
     const Chart14_1 = localStorage.getItem('result14_1')/1000
     const Chart14_2 = localStorage.getItem('result14_2')/1000
-    const Numbers_list = [Chart1_1, Chart1_2, Chart1_3, Chart1_4, Chart2_1, Chart2_2, Chart2_3, Chart2_4, Chart1_15, Chart3_1, Chart3_2, Chart3_3, Chart4_1, Chart4_2, Chart5_1, Chart6_1, Chart6_2, Chart7_1, Chart8_1, Chart9_1, Chart9_2, Chart10_1, Chart10_2, Chart11_1, Chart12_1, Chart13_1, Chart13_2, Chart14_1, Chart14_2]
-    const maxNumber = Math.max(...Numbers_list);
+    const displaycategory1 = () => {
+        if (Category_method1 === '0') return Chart1_1
+        if (Category_method1 === '1') return Chart1_2
+        if (Category_method1 === '2') return Chart1_3
+        if (Category_method1 === '3') return Chart1_4
+    }
+    const displaycategory2 = () => {
+        if (Category_method2 === '0') return Chart2_1
+        if (Category_method2 === '1') return Chart2_2
+        if (Category_method2 === '2') return Chart2_3
+        if (Category_method2 === '3') return Chart2_4
+    }
+    const displaycategory4 = () => {
+        if (Category_method4 === '0') return Chart3_1
+        if (Category_method4 === '1') return Chart3_2
+        if (Category_method4 === '2') return Chart3_3
+    }
+    const displaycategory5 = () => {
+        if (Category_method5 === '0') return Chart4_1
+        if (Category_method5 === '1') return Chart4_2
+    }
+    const displaycategory7 = () => {
+        if (Category_method7 === '0') return Chart6_1
+        if (Category_method7 === '1') return Chart6_2
+    }
+    const displaycategory10 = () => {
+        if (Category_method10 === '0') return Chart9_1
+        if (Category_method10 === '1') return Chart9_2
+    }
+    const displaycategory11 = () => {
+        if (Category_method11 === '0') return Chart10_1
+        if (Category_method11 === '1') return Chart10_2
+    }
+    const displaycategory14 = () => {
+        if (Category_method14 === '0') return Chart13_1
+        if (Category_method14 === '1') return Chart13_2
+    }
+    const displaycategory15 = () => {
+        if (Category_method15 === '0') return Chart14_1
+        if (Category_method15 === '1') return Chart14_2
+    }
+    
+    const displaycategorymethod1 = () => {
+        if (Category_method1 === '0') return "PurchaseGoodSupplier"
+        if (Category_method1 === '1') return "PurchaseGoodHybrid"
+        if (Category_method1 === '2') return "PurchaseGoodAverage"
+        if (Category_method1 === '3') return "PurchaseGoodSpend"
+    }
+    const displaycategorymethod2 = () => {
+        if (Category_method2 === '0') return "CapitalGoodSupplier"
+        if (Category_method2 === '1') return "CapitalGoodHybrid"
+        if (Category_method2 === '2') return "CapitalGoodProduct"
+        if (Category_method2 === '3') return "CapitalGoodSpend"
+    }
+    const displaycategorymethod4 = () => {
+        if (Category_method4 === '0') return "UpstreamFuel"
+        if (Category_method4 === '1') return "UpstreamDistance"
+        if (Category_method4 === '2') return "UpstreamSpend"
+    }
+    const displaycategorymethod5 = () => {
+        if (Category_method5 === '0') return "WasteWasteType"
+        if (Category_method5 === '1') return "WasteAverage"
+    }
+    const displaycategorymethod7 = () => {
+        if (Category_method7 === '0') return "EmployeeDistance"
+        if (Category_method7 === '1') return "EmployeeAverage"
+    }
+    const displaycategorymethod10 = () => {
+        if (Category_method10 === '0') return "SoldProductsSite"
+        if (Category_method10 === '1') return "SoldProductsAverage"
+    }
+    const displaycategorymethod11 = () => {
+        if (Category_method11 === '0') return "SoldProductsDirect"
+        if (Category_method11 === '1') return "SoldProductsIndirect"
+    }
+    const displaycategorymethod14 = () => {
+        if (Category_method14 === '0') return "Franchisespecific"
+        if (Category_method14 === '1') return "FranchisesAverage"
+    }
+    const displaycategorymethod15 = () => {
+        if (Category_method15 === '0') return "InvestmentSpecific"
+        if (Category_method15 === '1') return "InvestmentAverage"
+    }
+    console.log("---------->>>>>", displaycategory1())
+    const labels = [displaycategorymethod1(), displaycategorymethod2(), 'FuelEnergyTransmission', displaycategorymethod4(), displaycategorymethod5(), 'BusinessTravelDistance', displaycategorymethod7(), 'UpstreamLeasedAssets', 'DownstreamTransporatation', displaycategorymethod10(), displaycategorymethod11(), 'EndOfLifeWasteType', 'DownStreamLeasedAssets', displaycategorymethod14(), displaycategorymethod15()]
+    const Numbers_list = [displaycategory1(), displaycategory2(), Chart1_15, displaycategory4(), displaycategory5(), Chart5_1, displaycategory7(), Chart7_1, Chart8_1, displaycategory10(), displaycategory11(), Chart11_1, Chart12_1, displaycategory14(), displaycategory15()]
+    const maxNumber = Math.max(...Numbers_list).toFixed(3);
     const data = {
         labels,
         datasets: [
             {
                 label: 'CO2 Emission of Scope3(t CO2)',
-                // data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
                 data: Numbers_list,
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
             },
@@ -112,20 +201,10 @@ function DisplayPage() {
                                 <span>(t co2e)</span>
                             </div>
                             <div className='item'>
-                                <span>TOTAL EMISSIONS OF SCOPE3</span>
+                                <span>Max EMISSIONS OF SCOPE3</span>
                                 <span>(2023/10/11/12:00)</span>
                                 <span>{maxNumber} tCO2e</span>
                             </div>
-                            {/* <div className='item'>
-                                <span>PREVIOUS PERIOD NET EMISSIONS</span>
-                                <span>(DEC 2021 - NOV 2022)</span>
-                                <span>491,536.08 tCO2e</span>
-                            </div>
-                            <div className='item'>
-                                <span>VARIANCE</span>
-                                <span>(14,239.3 T CO2E)</span>
-                                <span>2.89%</span>
-                            </div> */}
                         </div>
                     </div>
                     <div className='card'>
