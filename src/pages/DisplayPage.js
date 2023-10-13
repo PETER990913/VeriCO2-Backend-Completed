@@ -204,7 +204,7 @@ function DisplayPage() {
     console.log("---------->>>>>", displaycategory1())
     const labels = [displaycategorymethod1(), displaycategorymethod2(), 'FuelEnergyTransmission', displaycategorymethod4(), displaycategorymethod5(), 'BusinessTravelDistance', displaycategorymethod7(), 'UpstreamLeasedAssets', 'DownstreamTransporatation', displaycategorymethod10(), displaycategorymethod11(), 'EndOfLifeWasteType', 'DownStreamLeasedAssets', displaycategorymethod14(), displaycategorymethod15()]
     const Numbers_list = [displaycategory1(), displaycategory2(), Chart1_15, displaycategory4(), displaycategory5(), Chart5_1, displaycategory7(), Chart7_1, Chart8_1, displaycategory10(), displaycategory11(), Chart11_1, Chart12_1, displaycategory14(), displaycategory15()]
-    const maxNumber = Math.max(...Numbers_list).toFixed(3);
+    const maxNumber = (displaycategory1()+ displaycategory2()+ Chart1_15+ displaycategory4()+ displaycategory5()+ Chart5_1+ displaycategory7()+ Chart7_1+ Chart8_1+ displaycategory10()+ displaycategory11()+ Chart11_1+ Chart12_1+ displaycategory14()+ displaycategory15()).toFixed(2)
     const data = {
         labels,
         datasets: [
@@ -245,9 +245,9 @@ function DisplayPage() {
                                 <span>(t co2e)</span>
                             </div>
                             <div className='item'>
-                                <span>Max EMISSIONS OF SCOPE3</span>
+                                <span>TOTAL EMISSIONS OF SCOPE3</span>
                                 <span>(2023/10/11/12:00)</span>
-                                <span>{maxNumber} tCO2e</span>
+                                <span>{maxNumber} t CO2e</span>
                             </div>
                         </div>
                     </div>
@@ -267,82 +267,82 @@ function DisplayPage() {
                                     <tr>
                                         <th>Category</th>
                                         <th>Method</th>
-                                        <th>Total Emission of Scope3(tCO2)</th>
+                                        <th>Total Emission of Scope3  (t CO2)</th>
                                     </tr>
                                     <tr>
                                         <td>Purchased Goods and Services</td>
                                         <td>{displaymethod1()}</td>
-                                        <td>{displaycategory1()}</td>
+                                        <td>{displaycategory1().toFixed(2)}</td>
                                     </tr>
                                     <tr>
                                         <td>Capital Goods</td>
                                         <td>{displaymethod2()}</td>
-                                        <td>{displaycategory2()}</td>
+                                        <td>{displaycategory2().toFixed(2)}</td>
                                     </tr>
                                     <tr>
                                         <td>Fuel- and Energy-Related Activities Not Included in Scope 1 or Scope 2</td>
                                         <td>transmission and distribution losses method</td>
-                                        <td>{Chart1_15}</td>                                        
+                                        <td>{Chart1_15.toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>Upstream Transportation and Distribution</td>
                                         <td>{displaymethod4()}</td>
-                                        <td>{displaycategory4()}</td>                                        
+                                        <td>{displaycategory4().toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>Waste Generated in Operations</td>
                                         <td>{displaymethod5()}</td>
-                                        <td>{displaycategory5()}</td>                                        
+                                        <td>{displaycategory5().toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>Business Travel</td>
                                         <td>Distance-based method</td>
-                                        <td>{Chart5_1}</td>                                        
+                                        <td>{Chart5_1.toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>Employee Commuting</td>
                                         <td>{displaymethod7()}</td>
-                                        <td>{displaycategory7()}</td>                                        
+                                        <td>{displaycategory7().toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>Upstream Leased Assets</td>
                                         <td>Asset-specific method</td>
-                                        <td>{Chart7_1}</td>                                        
+                                        <td>{Chart7_1.toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>Downstream Transportation and Distribution</td>
                                         <td>downstream method</td>
-                                        <td>{Chart8_1}</td>                                        
+                                        <td>{Chart8_1.toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>Processing of Sold Products</td>
                                         <td>{displaymethod10()}</td>
-                                        <td>{displaycategory10()}</td>                                        
+                                        <td>{displaycategory10().toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>Use of Sold Products</td>
                                         <td>{displaymethod11()}</td>
-                                        <td>{displaycategory11()}</td>                                        
+                                        <td>{displaycategory11().toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>End-of-Life Treatment of Sold Products</td>
                                         <td>Waste-type-specific method</td>
-                                        <td>{Chart11_1}</td>                                        
+                                        <td>{Chart11_1.toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>Downstream Leased Assets</td>
                                         <td>Downstream Leased Assets method</td>
-                                        <td>{Chart12_1}</td>                                        
+                                        <td>{Chart12_1.toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>Franchises</td>
                                         <td>{displaymethod14()}</td>
-                                        <td>{displaycategory14()}</td>                                        
+                                        <td>{displaycategory14().toFixed(2)}</td>                                        
                                     </tr>
                                     <tr>
                                         <td>Investments</td>
                                         <td>{displaymethod15()}</td>
-                                        <td>{displaycategory15()}</td>                                        
+                                        <td>{displaycategory15().toFixed(2)}</td>                                        
                                     </tr>
                                 </tbody>
                             </table>
